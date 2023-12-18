@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  IOSMarvieApp
+
+  Created by Gokhan Kaya on 18.12.2023.
+  
+*/
+
+//Onboard View
+"joinOur" = "Join our awesome community";
+"itLooks" = "It looks like you are on track. Please continue to follow your daily plan";
+"next" = "Next";
