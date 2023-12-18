@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "card_image_seven.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
