@@ -75,5 +75,11 @@ extension Color{
     public static var wishper_blue : Color{
         Color("wishper_blue")
     }
+    public static var boysenberry_shadow : Color{
+        Color("boysenberry_shadow")
+    }
+    public static var wash_me : Color{
+        Color("wash_me")
+    }
     
 }
