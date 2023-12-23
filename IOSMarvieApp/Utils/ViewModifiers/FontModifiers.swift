@@ -8,15 +8,11 @@
 import Foundation
 import SwiftUI
 
-struct ExtraLargeTitle : ViewModifier{
-    func body(content: Content) -> some View {
-        return content.font(.custom("HelveticaNeue-Bold", size: FontSizes.extraLarge.rawValue))
-    }
-}
+
 
 struct LargeTitleModifier : ViewModifier{
     func body(content: Content) -> some View {
-        return content.font(.custom("HelveticaNeue-Bold", size: FontSizes.large.rawValue))
+        return content.font(.custom("HelveticaNeue", size: FontSizes.large.rawValue))
     }
 }
 
@@ -26,6 +22,13 @@ struct ButtonTitle : ViewModifier{
     }
 }
 
+
+
+struct BoldExtraLargeTitle : ViewModifier{
+    func body(content: Content) -> some View {
+        return content.font(.custom("HelveticaNeue-Bold", size: FontSizes.extraLarge.rawValue))
+    }
+}
 
 struct BoldLargeTitle : ViewModifier{
     func body(content: Content) -> some View {

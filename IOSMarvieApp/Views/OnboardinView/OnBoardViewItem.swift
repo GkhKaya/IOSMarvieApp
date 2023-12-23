@@ -36,6 +36,4 @@ struct OnBoardViewItem: View {
     }
 }
 
-#Preview {
-    OnBoardViewItem(onboardModel: onBoardModelData[0])
-}
+

@@ -21,13 +21,15 @@ struct OnboardView: View {
                                     OnBoardViewItem(onboardModel: item)
                         }
                     }.tabViewStyle(PageTabViewStyle())
-                        .frame(width: geomety.dh(height: 0.5),height: geomety.dh(height: 0.9))
+                        .frame(width: geomety.dw(width: 1),height: geomety.dh(height: 0.9))
                     NormalButtonWithIcon(ontap: {
                         vm.goToLoginPage = true
-                    }, title: "Next", iconName: "arrow.right")
+                    }, title: LocalKeys.Onboard.next.rawValue, iconName: "arrow.right").padding(.horizontal,100)
                     Spacer()
                 }.navigationDestination(isPresented: $vm.goToLoginPage){
                     SignInView().navigationBarBackButtonHidden(true)
+                        .padding(.horizontal,ProjectPaddings.All.normal.rawValue)
+                        .ignoresSafeArea()
                 }
             }
         }

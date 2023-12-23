@@ -18,8 +18,10 @@ struct NormalButtonWithIcon: View {
                 ontap()
             }label: {
                 HStack {
+                    Spacer()
                     Text(title.locale())
                     Image(systemName: iconName)
+                    Spacer()
                 }
                     .tint(.white)
                     .font(.system(size: FontSizes.normal.rawValue,weight: .semibold))
@@ -39,5 +41,5 @@ struct NormalButtonWithIcon: View {
 #Preview {
     NormalButtonWithIcon(ontap: {
         
-    }, title: "Next", iconName: "arrow_right")
+    }, title: "Next", iconName: "arrow.right")
 }
