@@ -10,3 +10,13 @@
 "joinOur" = "Join our awesome community";
 "itLooks" = "It looks like you are on track. Please continue to follow your daily plan";
 "next" = "Next";
+
+
+
+//Auth
+"hello" = "Hello";
+"letsIntroduce" = "Lets Introduce";
+"pleaseWriteEmail" = "Please Write Email";
+"pleaseWriteUsername" = "Please Write Username";
+
+

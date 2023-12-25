@@ -25,7 +25,7 @@ struct OnboardView: View {
                             .frame(width: geomety.dw(width: 1),height: geomety.dh(height: 0.9))
                         NormalButtonWithIcon(ontap: {
                             vm.goToLoginPage = true
-                        }, title: LocalKeys.Onboard.next.rawValue, iconName: "arrow.right").padding(.horizontal,100)
+                        }, title: LocalKeys.Onboard.next.rawValue.locale(), iconName: "arrow.right").padding(.horizontal,100)
                         Spacer()
                     }.navigationDestination(isPresented: $vm.goToLoginPage){
                         SignInView().navigationBarBackButtonHidden(true)

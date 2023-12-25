@@ -1,16 +1,15 @@
 //
-//  NormalButton.swift
+//  NormalButtonWithIcon.swift
 //  IOSMarvieApp
 //
-//  Created by Gokhan Kaya on 21.12.2023.
+//  Created by Gokhan Kaya on 25.12.2023.
 //
 
-import Foundation
 import SwiftUI
 
 struct NormalButtonWithIcon: View {
     var ontap: () -> Void
-    var title : String
+    var title : LocalizedStringKey
     var iconName : String
     var body: some View {
         VStack{
@@ -19,7 +18,7 @@ struct NormalButtonWithIcon: View {
             }label: {
                 HStack {
                     Spacer()
-                    Text(title.locale())
+                    Text(title)
                     Image(systemName: iconName)
                     Spacer()
                 }
@@ -34,12 +33,4 @@ struct NormalButtonWithIcon: View {
                
         }
     }
-}
-
-
-
-#Preview {
-    NormalButtonWithIcon(ontap: {
-        
-    }, title: "Next", iconName: "arrow.right")
 }

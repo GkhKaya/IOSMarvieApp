@@ -36,6 +36,14 @@ struct SignInView: View {
                             HTextSecureField(textBinding: $vm.passwordValue, geometry: geometry, icBgColor: Color.khmerCurry, icName: "lock", hintText: "Please Enter Password")
                         }
                         
+                        HStack {
+                            Spacer()
+                            NormalButtonWithIcon(ontap: {
+                                
+                            }, title: "Sign In", iconName: "chevron.right")
+                            Spacer()
+                        }.padding(.top,ProjectPaddings.Top.large.rawValue)
+                        
 //                        Buttons part
                         SignInViewActionButtons()
                         
@@ -59,7 +67,7 @@ struct HTextField: View {
     var geometry : GeometryProxy
     var icBgColor : Color
     var icName : String
-    var hintText : String
+    var hintText : LocalizedStringKey
     var body: some View {
         HStack(alignment: .center,spacing: 10){
             ZStack(alignment: .center){
@@ -102,7 +110,6 @@ struct HTextSecureField: View {
                 Divider()
                     .foregroundStyle(.ravenNight)
             }
-            
         }
     }
 }
@@ -110,14 +117,6 @@ struct HTextSecureField: View {
 struct SignInViewActionButtons: View {
     var body: some View {
         VStack{
-            HStack {
-                Spacer()
-                NormalButtonWithIcon(ontap: {
-                    
-                }, title: "Sign In", iconName: "chevron.right")
-                Spacer()
-            }.padding(.top,ProjectPaddings.Top.large.rawValue)
-            
             HStack {
                 Spacer()
                 NavigationLink(destination: OnboardView()) {
