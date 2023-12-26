@@ -14,9 +14,18 @@
 
 
 //Auth
+"welcome" = "Welcome";
+"signInToContinue" = "Sign in to continue";
+"signIn"="Sign In";
+"forgotPassword" ="Forgor Password";
+"createAnAccount" = "Create An Account";
 "hello" = "Hello";
 "letsIntroduce" = "Lets Introduce";
 "pleaseWriteEmail" = "Please Write Email";
+"pleaseWritePassword" = "Please Write Password";
 "pleaseWriteUsername" = "Please Write Username";
+"createPassword" = "Create Password";
+"repeatPassword" = "Repeat Your Password";
+"finish"  = "Finish";
 
 

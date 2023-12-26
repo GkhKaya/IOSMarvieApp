@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SignUpViewOne: View {
+    @Environment(\.dismiss) private var dismiss
     @ObservedObject var vm = SignUpViewViewModel()
     var body: some View {
         NavigationStack{
@@ -37,19 +38,24 @@ struct SignUpViewOne: View {
                             ZStack {
                                 RoundedRectangle(cornerRadius: ProjectRadius.small.rawValue).frame(width: geometry.dw(width: 0.130),height: geometry.dh(height: 0.065)).foregroundStyle(.eden)
                                 
-                                Image(systemName: "arrow.left").foregroundStyle(.darkShamrock)
+                                Button{
+                                    dismiss()
+                                }label: {
+                                    Image(systemName: "arrow.left").foregroundStyle(.darkShamrock)
+                                }
+                                
                             }
                             
                             NormalButtonWithIcon(ontap: {
                                 
                             }, title: LocalKeys.Onboard.next.rawValue.locale(), iconName: "arrow.right")
-                        }
+                        }.padding(.bottom,ProjectPaddings.Bottom.veryLarge.rawValue)
                         Spacer()
-                        Spacer()
-                        Spacer()
-                        Spacer()
+                       
                     }.padding(.all,ProjectPaddings.All.normal.rawValue)
+                        .padding(.bottom,ProjectPaddings.Bottom.veryLarge.rawValue)
                 }.background(Color.boysenberryShadow)
+                    .ignoresSafeArea()
             }
         }
     }

@@ -12,6 +12,7 @@ final class SignUpViewViewModel : ObservableObject{
     @Published var passwordValue: String = ""
     @Published var usernameValue: String = ""
     @Published var phoneNumberValue: String = ""
+    @Published var isSignedUp : Bool  = false
     
 
 }

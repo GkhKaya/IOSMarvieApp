@@ -17,13 +17,14 @@ struct SignInView: View {
 //                    Welcome part
                     VStack(alignment:.leading){
                         RoundedRectangle(cornerRadius: ProjectRadius.normal.rawValue).frame(width: geometry.dw(width: 0.16),height: geometry.dh(height: 0.08)).foregroundColor(.darkShamrock).padding(.bottom,ProjectPaddings.Bottom.normal.rawValue).shadow(color: .darkShamrock, radius: 10,x: 0,y: 5)
+                            .padding(.bottom,ProjectPaddings.Bottom.normal.rawValue)
                         
-                        Text("Welcome!")
+                        Text(LocalKeys.Auth.welcome.rawValue.locale())
                             .modifier(BoldExtraLargeTitle())
-                            .padding(.bottom,ProjectPaddings.Bottom.small.rawValue)
+                            .padding(.bottom,ProjectPaddings.Bottom.normal.rawValue)
                         
                         
-                        Text("Sign in to continue")
+                        Text(LocalKeys.Auth.signInToContinue.rawValue.locale())
                             .modifier(MediumMediumTitle())
                             .foregroundColor(.medidative)
                             .padding(.bottom,ProjectPaddings.Bottom.veryLarge.rawValue)
@@ -31,9 +32,9 @@ struct SignInView: View {
                         
 //                       Text Fields part
                         VStack(spacing: 20) {
-                            HTextField(textBinding: $vm.emailValue, geometry: geometry,icBgColor: Color.macaw,icName: "person",hintText: "Please Write Email")
+                            HTextField(textBinding: $vm.emailValue, geometry: geometry,icBgColor: Color.macaw,icName: "person",hintText: LocalKeys.Auth.pleaseWriteEmail.rawValue.locale())
                             
-                            HTextSecureField(textBinding: $vm.passwordValue, geometry: geometry, icBgColor: Color.khmerCurry, icName: "lock", hintText: "Please Enter Password")
+                            HTextSecureField(textBinding: $vm.passwordValue, geometry: geometry, icBgColor: Color.khmerCurry, icName: "lock", hintText: LocalKeys.Auth.pleaseWritePassword.rawValue.locale())
                         }
                         
                         HStack {
@@ -46,11 +47,11 @@ struct SignInView: View {
                         
 //                        Buttons part
                         SignInViewActionButtons()
-                        
-                        
+
                         Spacer()
                     }.padding(.all,ProjectPaddings.All.normal.rawValue)
                 }.background(Color.boysenberryShadow)
+                    .ignoresSafeArea()
             }
         }
     }
@@ -94,7 +95,7 @@ struct HTextSecureField: View {
     var geometry : GeometryProxy
     var icBgColor : Color
     var icName : String
-    var hintText : String
+    var hintText : LocalizedStringKey
     var body: some View {
         HStack(alignment: .center,spacing: 10){
             ZStack(alignment: .center){
@@ -120,16 +121,16 @@ struct SignInViewActionButtons: View {
             HStack {
                 Spacer()
                 NavigationLink(destination: OnboardView()) {
-                    Text("Forgot Password")
+                    Text(LocalKeys.Auth.forgotPassword.rawValue.locale())
                 }.foregroundStyle(.medidative)
                 Spacer()
             }.padding(.top,ProjectPaddings.Top.normal.rawValue)
             
             HStack{
-                NavigationLink(destination: OnboardView()){
+                NavigationLink(destination: SignUpViewOne().navigationBarBackButtonHidden()){
                     HStack {
                         Spacer()
-                        Text("Create an Account")
+                        Text(LocalKeys.Auth.createAnAccount.rawValue.locale())
                         Spacer()
                     }
                     .tint(.darkShamrock)
